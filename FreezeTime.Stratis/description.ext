@@ -1,0 +1,10 @@
+enableDebugConsole = 2;
+allowFunctionsLog = 1;
+
+onLoadName = "Freeze time";
+onLoadMission = "Bundle of scripts for freeze time.";
+author = "Loac";
+
+#include "configs\cfgParams.hpp"
+#include "configs\cfgFunctions.hpp"
+#include "configs\cfgRscTitles.hpp"
