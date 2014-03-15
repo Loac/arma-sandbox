@@ -1,6 +1,6 @@
 enableDebugConsole = 2;
 allowFunctionsLog = 1;
 
-onLoadName = "TEST";
+onLoadName = "Sandbox";
 onLoadMission = "Good luck";
 author = "Loac";

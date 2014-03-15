@@ -1,0 +1,11 @@
+class CfgFunctions {
+    class Sayer {
+        class Sayer {
+            class new {};
+            class getFieldIndex {};
+            class get {};
+            class set {};
+            class say {};
+        };
+    };
+};
