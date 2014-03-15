@@ -8,7 +8,7 @@ light setLightAmbient [1, 1, 1];
 light setLightColor [1, 1, 1];
 
 
-onEachFrame {
+waitUntil {
     posX = (position player) select 0;
     posY = (position player) select 1;
 
@@ -17,7 +17,9 @@ onEachFrame {
 
     light setpos [posX, posY, 0.1];
 
-    lightDeg = lightDeg + 1;
+    lightDeg = lightDeg + 2;
 
-    sleep 0.5;
+    sleep 0.01;
+
+    false;
 };
