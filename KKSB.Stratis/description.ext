@@ -1,0 +1,8 @@
+enableDebugConsole = 2;
+allowFunctionsLog = 1;
+
+onLoadName = "Test Variables";
+author = "Loac";
+onLoadMission = "Good luck";
+
+#include "KKSB\KKSB.ext"

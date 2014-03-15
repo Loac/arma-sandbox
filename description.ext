@@ -1,0 +1,6 @@
+enableDebugConsole = 2;
+allowFunctionsLog = 1;
+
+onLoadName = "TEST";
+onLoadMission = "Good luck";
+author = "Loac";
