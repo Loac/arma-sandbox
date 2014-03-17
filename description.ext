@@ -4,3 +4,6 @@ allowFunctionsLog = 1;
 onLoadName = "Sandbox";
 onLoadMission = "Good luck";
 author = "Loac";
+
+#include "configs\cfgParams.hpp"
+#include "configs\cfgFunctions.hpp"
