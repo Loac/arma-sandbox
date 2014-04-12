@@ -9,6 +9,7 @@ class CfgFunctions
             class getParam {};
             class broadcast {};
             class fade {};
+            class testMarker{};
         };
     };
 };

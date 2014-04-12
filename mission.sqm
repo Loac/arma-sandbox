@@ -84,7 +84,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=3;
+		items=5;
 		class Item0
 		{
 			position[]={4377.5,227.39169,3830.4185};
@@ -116,6 +116,29 @@ class Mission
 			type="Empty";
 			a=20;
 			b=20;
+		};
+		class Item3
+		{
+			position[]={4083.9451,201.88165,4664.3604};
+			name="Place1";
+			markerType="ELLIPSE";
+			type="Empty";
+			fillName="Border";
+			a=20;
+			b=20;
+			drawBorder=1;
+		};
+		class Item4
+		{
+			position[]={4139.0215,205.2083,4653.1895};
+			name="Place2";
+			markerType="RECTANGLE";
+			type="Empty";
+			fillName="Border";
+			a=20;
+			b=50;
+			angle=15;
+			drawBorder=1;
 		};
 	};
 };
