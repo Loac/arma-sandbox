@@ -19,7 +19,6 @@
 // ["off"] call sandbox_fnc_fade;
 
 
-_index = 0;
 
 // waitUntil {
 
@@ -58,24 +57,21 @@ _index = 0;
 // testPos = test call BIS_fnc_randomPosTrigger;
 // player setPos testPos;
 
-waitUntil {
-  time > 2;
-};
 
-  myTrigger1 = [objNull, "Place1"] call BIS_fnc_triggerToMarker;
 
-  myTrigger2 = [objNull, "Place2"] call BIS_fnc_triggerToMarker;
+  // myTrigger1 = [objNull, "Place1"] call BIS_fnc_triggerToMarker;
 
-  _count = 0;
-  while {_count < 99} do {
-    _pos = myTrigger1 call BIS_fnc_randomPosTrigger;
-    _valid = [myTrigger2, _pos] call BIS_fnc_inTrigger;
+  // myTrigger2 = [objNull, "Place2"] call BIS_fnc_triggerToMarker;
 
-    if (not _valid) then {
-      [_pos, "ColorRed"] call sandbox_fnc_testMarker;
-      _count = _count + 1;
-    };
+  // _count = 0;
+  // while {_count < 99} do {
+  //   _pos = myTrigger1 call BIS_fnc_randomPosTrigger;
+  //   _valid = [myTrigger2, _pos] call BIS_fnc_inTrigger;
 
-  };
+  //   if (not _valid) then {
+  //     [_pos, "ColorRed"] call sandbox_fnc_testMarker;
+  //     _count = _count + 1;
+  //   };
 
-hint 'Done';
+  // };
+

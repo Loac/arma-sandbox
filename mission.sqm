@@ -39,7 +39,7 @@ class Mission
 			side="WEST";
 			class Vehicles
 			{
-				items=2;
+				items=1;
 				class Item0
 				{
 					position[]={4322.4819,177.31557,4373.2793};
@@ -49,16 +49,6 @@ class Mission
 					vehicle="B_Soldier_F";
 					player="PLAYER COMMANDER";
 					leader=1;
-					skill=0.60000002;
-				};
-				class Item1
-				{
-					position[]={4318.5601,177.67198,4381.0957};
-					azimut=505.90842;
-					id=1;
-					side="WEST";
-					vehicle="B_Soldier_F";
-					player="PLAY CDG";
 					skill=0.60000002;
 				};
 			};
@@ -72,7 +62,7 @@ class Mission
 				class Item0
 				{
 					position[]={4436.0532,211.59375,3832.5845};
-					id=2;
+					id=1;
 					side="EAST";
 					vehicle="O_Soldier_F";
 					player="PLAY CDG";
@@ -84,7 +74,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=5;
+		items=6;
 		class Item0
 		{
 			position[]={4377.5,227.39169,3830.4185};
@@ -110,15 +100,6 @@ class Mission
 		};
 		class Item2
 		{
-			position[]={4328.0591,177.34543,4379.5718};
-			name="BLUESTART";
-			markerType="ELLIPSE";
-			type="Empty";
-			a=20;
-			b=20;
-		};
-		class Item3
-		{
 			position[]={4083.9451,201.88165,4664.3604};
 			name="Place1";
 			markerType="ELLIPSE";
@@ -128,7 +109,7 @@ class Mission
 			b=20;
 			drawBorder=1;
 		};
-		class Item4
+		class Item3
 		{
 			position[]={4139.0215,205.2083,4653.1895};
 			name="Place2";
@@ -139,6 +120,24 @@ class Mission
 			b=50;
 			angle=15;
 			drawBorder=1;
+		};
+		class Item4
+		{
+			position[]={4342.3423,186.95386,4419.2046};
+			name="Spot 1";
+			markerType="ELLIPSE";
+			type="Empty";
+			a=5;
+			b=5;
+		};
+		class Item5
+		{
+			position[]={4395.2788,192.47221,4424.8872};
+			name="Spot 2";
+			markerType="ELLIPSE";
+			type="Empty";
+			a=5;
+			b=5;
 		};
 	};
 };
