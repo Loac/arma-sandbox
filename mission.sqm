@@ -5,12 +5,12 @@ class Mission
 	{
 		"A3_Characters_F_BLUFOR",
 		"a3_map_stratis",
-		"A3_Characters_F_OPFOR"
+		"A3_Animals_F_Rabbit"
 	};
 	addOnsAuto[]=
 	{
 		"A3_Characters_F_BLUFOR",
-		"A3_Characters_F_OPFOR",
+		"A3_Animals_F_Rabbit",
 		"a3_map_stratis"
 	};
 	randomSeed=5383441;
@@ -33,7 +33,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=2;
+		items=1;
 		class Item0
 		{
 			side="WEST";
@@ -42,34 +42,30 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={4322.4819,177.31557,4373.2793};
-					azimut=334.36642;
+					position[]={3270.7935,5.3433571,5793.0078};
+					azimut=334.366;
 					id=0;
 					side="WEST";
-					vehicle="B_Soldier_F";
+					vehicle="B_Soldier_TL_F";
 					player="PLAYER COMMANDER";
 					leader=1;
 					skill=0.60000002;
 				};
 			};
 		};
-		class Item1
+	};
+	class Vehicles
+	{
+		items=1;
+		class Item0
 		{
-			side="EAST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={4436.0532,211.59375,3832.5845};
-					id=1;
-					side="EAST";
-					vehicle="O_Soldier_F";
-					player="PLAY CDG";
-					leader=1;
-					skill=0.60000002;
-				};
-			};
+			position[]={3257.6609,5.0936475,5803.4541};
+			azimut=334.366;
+			id=1;
+			side="AMBIENT LIFE";
+			vehicle="Rabbit_F";
+			leader=1;
+			skill=0.60000002;
 		};
 	};
 	class Markers
@@ -100,7 +96,7 @@ class Mission
 		};
 		class Item2
 		{
-			position[]={4083.9451,201.88165,4664.3604};
+			position[]={3103.5383,9.7126646,6064.4746};
 			name="Place1";
 			markerType="ELLIPSE";
 			type="Empty";
@@ -111,7 +107,7 @@ class Mission
 		};
 		class Item3
 		{
-			position[]={4139.0215,205.2083,4653.1895};
+			position[]={3158.6147,6.8830261,6053.3037};
 			name="Place2";
 			markerType="RECTANGLE";
 			type="Empty";
@@ -123,8 +119,9 @@ class Mission
 		};
 		class Item4
 		{
-			position[]={4342.3423,186.95386,4419.2046};
+			position[]={3260.7549,4.5855441,5825.417};
 			name="Spot 1";
+			text="CARELESS+BLUE";
 			markerType="ELLIPSE";
 			type="Empty";
 			a=5;
@@ -132,7 +129,7 @@ class Mission
 		};
 		class Item5
 		{
-			position[]={4395.2788,192.47221,4424.8872};
+			position[]={3414.8721,18.583786,5825.0015};
 			name="Spot 2";
 			markerType="ELLIPSE";
 			type="Empty";

@@ -19,7 +19,20 @@
         [west, position player, ["B_officer_F"]] execVM "misc\createUnits.sqf";
 
     See:
-        ---
+        https://community.bistudio.com/wiki/CfgGroups
+        https://community.bistudio.com/wiki/BIS_fnc_spawnGroup
+        https://community.bistudio.com/wiki/BIS_fnc_taskDefend
+        https://community.bistudio.com/wiki/BIS_fnc_taskPatrol
+        https://community.bistudio.com/wiki/Category:Arma_3:_Editing
+
+        Create patrol:
+
+        _group = [markerPos "OBJECT", west, ["B_officer_F", "B_Soldier_F", "B_Soldier_F"]] call BIS_fnc_spawnGroup;
+        [_group, markerPos "OBJECT", markerSize "OBJECT" select 0] call BIS_fnc_taskPatrol;
+
+        _group = [markerPos "OBJECT", west, ["B_officer_F", "B_Soldier_F", "B_Soldier_F"]] call BIS_fnc_spawnGroup;
+        [_group, markerPos "OBJECT"] call BIS_fnc_taskDefend;
+
 */
 
 private [
@@ -42,15 +55,6 @@ _speed = ["LIMITED", "NORMAL", "FULL"];
 _type = ["MOVE", "DESTROY", "GETIN", "SAD", "JOIN", "LEADER", "GETOUT", "CYCLE", "LOAD", "UNLOAD", "TR UNLOAD", "HOLD",
             "SENTRY", "GUARD", "TALK", "SCRIPTED", "SUPPORT", "GETIN NEAREST", "DISMISS", "LOITER"];
 
-// Posseble waypoint parameters.
-_bundle = [
-    ["CARELESS", "SAFE", "AWARE", "COMBAT", "STEALTH"],                                             // 0: Behaviour.
-    ["BLUE", "GREEN", "WHITE", "YELLOW", "RED"],                                                    // 1: Combat Mode.
-    ["COLUMN", "STAG COLUMN", "WEDGE", "ECH LEFT", "ECH RIGHT", "VEE", "LINE", "FILE", "DIAMOND"],  // 2: Formation.
-    ["LIMITED", "NORMAL", "FULL"],                                                                  // 3: Speed.
-    ["MOVE", "DESTROY", "GETIN", "SAD", "JOIN", "LEADER", "GETOUT", "CYCLE", "LOAD", "UNLOAD",      // 4: Type.
-        "TR UNLOAD", "HOLD", "SENTRY", "GUARD", "TALK", "SCRIPTED", "SUPPORT", "GETIN NEAREST", "DISMISS", "LOITER"]];
-
 // Make group for squad.
 _group = createGroup _side;
 
@@ -66,60 +70,15 @@ _group = createGroup _side;
 
     // Try to set waypoint parameters.
     if (count _waypointParameters > 0) then {
-      // Split string to array. For example: "CARELESS+BLUE" to ["CARELESS", "BLUE"].
-      _parameters = [_waypointParameters call BIS_fnc_arrayPop, '+'] call BIS_fnc_splitString;
+        // Split string to array. For example: "CARELESS+BLUE" to ["CARELESS", "BLUE"].
+        _parameters = [_waypointParameters call BIS_fnc_arrayPop, '+'] call BIS_fnc_splitString;
 
-      {
-          // if ((_behaviour find _x) > -1) then { _waypoint setWaypointBehaviour _x };
-          // if ((_mode find _x) > -1) then { _waypoint setWaypointCombatMode _x };
-          // if ((_formation find _x) > -1) then { _waypoint setWaypointFormation _x };
-          // if ((_speed find _x) > -1) then { _waypoint setWaypointSpeed _x };
-          // if ((_type find _x) > -1) then { _waypoint setWaypointType _x };
-
-
-          _parameter = _x;
-
-          {
-            switch (_x find _parameter) do {
-              case (0): { _waypoint setWaypointBehaviour _parameter };
-              case (1): { _waypoint setWaypointCombatMode _parameter };
-              case (2): { _waypoint setWaypointFormation _parameter };
-              case (3): { _waypoint setWaypointSpeed _parameter };
-              case (4): { _waypoint setWaypointType _parameter };
-            };
-          } forEach _bundle;
-
-      } forEach _parameters;
+        {
+            if (_x in _behaviour) then { _waypoint setWaypointBehaviour _x };
+            if (_x in _mode) then { _waypoint setWaypointCombatMode _x };
+            if (_x in _formation) then { _waypoint setWaypointFormation _x };
+            if (_x in _speed) then { _waypoint setWaypointSpeed _x };
+            if (_x in _type) then { _waypoint setWaypointType _x };
+        } forEach _parameters;
     };
 } foreach _waypoints;
-
-
-/*
-setWaypointBehaviour
-"UNCHANGED", "CARELESS", "SAFE", "AWARE", "COMBAT", "STEALTH"
-
-setWaypointCombatMode
-"BLUE", "GREEN", "WHITE", "YELLOW", "RED",
-
-setWaypointFormation
-"COLUMN" ,"STAG COLUMN" ,"WEDGE" ,"ECH LEFT" ,"ECH RIGHT" ,"VEE" ,"LINE" ,"FILE" ,"DIAMOND"
-
-setWaypointSpeed
-"LIMITED", "NORMAL", "FULL"
-
-setWaypointType
-"MOVE", "DESTROY", "GETIN", "SAD", "JOIN", "LEADER", "GETOUT", "CYCLE", "LOAD",
-"UNLOAD", "TR UNLOAD", "HOLD", "SENTRY", "GUARD", "TALK", "SCRIPTED", "SUPPORT", "GETIN NEAREST", "DISMISS", "LOITER"
-
-
-// Posseble waypoint parameters.
-_bundleWaypointParameters = [
-    ["CARELESS", "SAFE", "AWARE", "COMBAT", "STEALTH"],                                             // 0: Behaviour.
-    ["BLUE", "GREEN", "WHITE", "YELLOW", "RED"],                                                    // 1: Combat Mode.
-    ["COLUMN", "STAG COLUMN", "WEDGE", "ECH LEFT", "ECH RIGHT", "VEE", "LINE", "FILE", "DIAMOND"]   // 2: Formation.
-    ["LIMITED", "NORMAL", "FULL"],                                                                  // 3: Speed.
-    ["MOVE", "DESTROY", "GETIN", "SAD", "JOIN", "LEADER", "GETOUT", "CYCLE", "LOAD", "UNLOAD",      // 4: Type.
-        "TR UNLOAD", "HOLD", "SENTRY", "GUARD", "TALK", "SCRIPTED", "SUPPORT", "GETIN NEAREST", "DISMISS", "LOITER"]];
-
-
-*/
